@@ -1,12 +1,11 @@
-- hosts: all
-  gather_facts: True
-  gather_subset:
+ - hosts: all
+   gather_facts: True
+   gather_subset:
     - network
     - virtual
-      
-  - name: Print some debug information 
-    vars: 
-      msg: |
+ - name: Print some debug information 
+     vars: 
+       msg: |
           Module Variables ("vars"):
           --------------------------------
           {{ vars | to_nice_json }} 
@@ -27,6 +26,6 @@
           --------------------------------
           {{ hostvars | to_nice_json }} 
 
-    debug: 
-      msg: "{{ msg.split('\n') }}"       
-    tags: debug_info
+     debug: 
+       msg: "{{ msg.split('\n') }}"       
+     tags: debug_info
