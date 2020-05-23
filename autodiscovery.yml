@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars:
-    subnet: '192.168.182.0/24'
+    subnet: '172.29.229.0/24'
   tasks:
     - name: "Presume host to not belong to subnet"
       set_fact:
